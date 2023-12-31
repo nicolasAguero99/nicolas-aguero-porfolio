@@ -1,0 +1,56 @@
+---
+import { projects } from "./projectsData"
+---
+
+<section>
+    <div class='flex flex-col gap-8'>
+      <h2 class='font-semibold text-4xl'>Mis proyectos</h2>
+      <div class='flex flex-wrap justify-center gap-8'>
+        {
+          projects.map(project => (            
+            <div class='relative max-w-[500px] rounded-3xl pb-8'>
+              <img class='w-full h-[250px] rounded-3xl object-cover' src={project.imageSrc} alt={`${project.title} foto`}>
+              <div class='h-[400px] flex flex-col gap-8 px-6 -mt-10 pt-16 border-2 border-primary rounded-3xl'>
+                <h3 class='font-semibold text-3xl'>{project.title}</h3>
+                <p class='h-[100px] text-lg'>{project.description}</p>
+                    <div class='flex gap-2 overflow-x-auto py-2'>
+                      {
+                        project.technologies.map(technology => (
+                          <span class='h-fit border-[1px] border-primary text-white hover:text-primary transition-colors duration-300 ease-out whitespace-nowrap rounded-full px-4 py-1 text-sm'>{technology}</span>
+                        ))
+                      }
+                    </div>
+                    <div class='flex gap-8'>
+                      {
+                        project.projectLink &&
+                        <a href={project.projectLink} target='_blank' class='flex gap-2 text-primary hover:underline'>
+                          Ver proyecto
+                          <img src="/icons/external-link-icon.svg" alt="link externo icono">
+                        </a>
+                      }
+                      <a href={project.codeLink} target='_blank' class='flex gap-2 text-primary hover:underline'>
+                        Ver repositorio
+                        <img src="/icons/external-link-icon.svg" alt="link externo icono">
+                      </a>
+                    </div>
+                  </div>
+              </div>
+            )
+          )
+        }
+      </div>
+    </div>
+</section>
+
+<style>
+  div::-webkit-scrollbar {
+    background: transparent;
+    height: 6px;
+  }
+  div::-webkit-scrollbar-track {
+  }
+  div::-webkit-scrollbar-thumb {
+    background: #929292;
+    border-radius: 100px;
+  }
+</style>

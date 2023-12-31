@@ -1,0 +1,29 @@
+---
+import Header from '../components/header/Header.astro'
+import Main from '../components/main/Main.astro'
+import '@fontsource/poppins'
+---
+
+<!doctype html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Astro description" />
+		<meta name="viewport" content="width=device-width" />
+    <link rel="shortcut icon" href="../../public/favicon.ico" type="image/x-icon">
+		<meta name="generator" content={Astro.generator} />
+		<title>Nicolas Aguero - Portfolio</title>
+	</head>
+	<body class='bg-bckgDark flex flex-col gap-32 px-10'>
+    <Header />
+    <slot />
+	</body>
+</html>
+<style>
+  body {
+    max-width: 1200px;
+    margin: 20px auto;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+  }
+</style>

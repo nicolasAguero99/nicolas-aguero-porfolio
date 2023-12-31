@@ -1,0 +1,46 @@
+---
+import { carouselItems } from './skillsData'
+import SkillCard from './SkillCard.astro'
+---
+
+<div class='swiper mySwiper w-full min-h-full h-[250px] cursor-grab active:cursor-grabbing select-none'>
+  <div class='swiper-wrapper'>
+    {
+      carouselItems.map((skill) => {
+        return (
+          <SkillCard skill={skill} />
+        )
+      })
+    }
+  </div>
+  <div class="swiper-pagination"></div>
+</div>
+
+<link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css' />
+<script is:inline src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<script is:inline>
+  new Swiper(".mySwiper", {
+    slidesPerView: 5,
+    autoplay: {
+      delay: 2500,
+      disableOnInteraction: false,
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+  });
+</script>
+
+<style is:global>
+  .swiper-pagination-bullet {
+    border: 1px solid #6167FF !important;
+    background: transparent !important;
+    transform: scale(1.3);
+  }
+  
+  .swiper-pagination-bullet-active {
+    background: #6167FF !important;
+  }
+</style>
