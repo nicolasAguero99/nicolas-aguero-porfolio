@@ -1,11 +1,13 @@
 interface Project {
-  title: string;
-  imageSrc: string;
-  description: string;
-  technologies: string[];
-  projectLink: string;
-  codeLink: string;
+  title: string
+  imageSrc: `/images/${string}`
+  description: string
+  technologies: Technologies[]
+  projectLink: string
+  codeLink: string
 }
+
+export type Technologies = 'React' | 'React native' | 'Node' | 'Mongo Db' | 'Axios' | 'Jwt' | 'Socket.io' | 'Scss' | 'Tailwind' | 'Three.js' | 'Html' | 'Css' | 'Javascript' | 'PWA' | 'API' | 'Bootstrap' | 'Php' | 'MySql' | 'Vue'
 
 export const projects: Project[] = [
   {

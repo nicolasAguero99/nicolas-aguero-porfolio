@@ -3,7 +3,7 @@ import { carouselItems } from './skillsData'
 import SkillCard from './SkillCard.astro'
 ---
 
-<div class='swiper mySwiper w-full min-h-full h-[250px] cursor-grab active:cursor-grabbing select-none'>
+<div class='swiper mySwiper w-full min-h-full h-[230px] sm:h-[250px] cursor-grab active:cursor-grabbing select-none'>
   <div class='swiper-wrapper'>
     {
       carouselItems.map((skill) => {
@@ -19,18 +19,60 @@ import SkillCard from './SkillCard.astro'
 <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css' />
 <script is:inline src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-<script is:inline>
-  new Swiper(".mySwiper", {
-    slidesPerView: 5,
-    autoplay: {
-      delay: 2500,
-      disableOnInteraction: false,
+<script is:inline>  
+  const SLIDES_PER_WIDTHS = [
+    {
+      width: 500,
+      slidesPerView: 1,
     },
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
+    {
+      width: 620,
+      slidesPerView: 2,
     },
-  });
+    {
+      width: 700,
+      slidesPerView: 3,
+    },
+    {
+      width: 980,
+      slidesPerView: 4,
+    },
+    {
+      width: 1070,
+      slidesPerView: 5,
+    },
+  ]
+
+  const getSlidesPerView = () => {
+    const closestMatch = SLIDES_PER_WIDTHS.reduce((prev, curr) => {
+      return Math.abs(curr.width - window.innerWidth) < Math.abs(prev.width - window.innerWidth) ? curr : prev
+    })
+    return closestMatch.slidesPerView
+  }
+
+  let slides
+  const getSlides = () => {
+    slides = new Swiper(".mySwiper", {
+      slidesPerView: getSlidesPerView(),
+      autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+    })
+    return slides
+  }
+
+  getSlides()
+
+  window.addEventListener('resize', () => {
+    slides?.destroy()
+    getSlides()
+  })
+
 </script>
 
 <style is:global>
