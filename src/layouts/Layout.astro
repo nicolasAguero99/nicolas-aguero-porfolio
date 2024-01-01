@@ -9,7 +9,6 @@ import '@fontsource/poppins'
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="description" content="Portfolio de Nicolás Agüero. Desarrollador Full Stack y diseñador web." />
-		<!-- <meta name="viewport" content="width=device-width" /> -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,user-scalable=0" />
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 		<meta name="generator" content={Astro.generator} />
@@ -20,7 +19,8 @@ import '@fontsource/poppins'
     <div class='flex flex-col gap-24'>
       <slot />
     </div>
-    <img class='absolute top-0 left-0 w-[200vw] max-h-[600vh] -z-1' src="/illustrations/flashes-bckg.png" alt="destello illustración">
+    <img class='max-[850px]:hidden absolute top-0 left-0 w-[200vw] max-h-[600vh] -z-10' src="/illustrations/flashes-bckg.png" alt="destello illustración">
+    <img class='min-[850px]:hidden absolute top-0 left-0 w-[200vw] max-h-[1100vh] -z-10' src="/illustrations/flashes-bckg-mobile.png" alt="destello illustración">
 	</body>
 </html>
 
