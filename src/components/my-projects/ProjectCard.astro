@@ -4,18 +4,18 @@ import { type Technologies } from './projectsData'
 ---
 
 <div class='relative w-full max-w-[500px] rounded-3xl pb-8'>
-  <img class='w-full h-[320px] rounded-3xl object-cover' src={imageSrc} alt={`${title} foto`}>
+  <img class='w-full sm:h-[320px] rounded-3xl object-contain sm:object-cover' src={imageSrc} alt={`${title} foto`}>
   <div class='min-[860px]:h-[400px] flex flex-col gap-8 px-6 -mt-10 pt-16 max-[860px]:pb-6 border-2 border-primary rounded-3xl'>
   <h3 class='font-semibold text-3xl'>{title}</h3>
-  <p class='h-full min-[860px]:h-[100px] text-lg'>{description}</p>
-    <div class='flex gap-2 overflow-x-auto py-2 custom-scroll'>
+  <p class='h-full min-[860px]:h-[100px] text-base sm:text-lg'>{description}</p>
+    <div class='relative flex gap-2 overflow-x-auto py-2 custom-scroll select-none'>
       {
         technologies.map((technology: Technologies) => (
           <span class='h-fit border-[1px] border-primary text-white hover:text-primary transition-colors duration-300 ease-out whitespace-nowrap rounded-full px-4 py-1 text-sm'>{technology}</span>
         ))
       }
     </div>
-    <div class='flex max-sm:flex-col gap-y-4 gap-8'>
+    <div class='flex flex-wrap gap-y-4 gap-8'>
       {
         projectLink &&
         <a href={projectLink} target='_blank' class='flex gap-2 text-primary hover:underline'>
@@ -34,9 +34,9 @@ import { type Technologies } from './projectsData'
 
 <style>
   .custom-scroll::-webkit-scrollbar {
-    display: none;
+    display: none
   }
   .custom-scroll::-webkit-scrollbar-thumb {
-    display: none;
+    display: none
   }
 </style>

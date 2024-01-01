@@ -3,9 +3,10 @@ import ProjectCard from "./ProjectCard.astro"
 import { projects } from "./projectsData"
 ---
 
-<section id='projects' class='pt-10'>
+<section id='projects' class='relative pt-10'>
     <div class='flex flex-col gap-8'>
-      <h2 class='font-semibold text-2xl sm:text-3xl lg:text-4xl'>Mis proyectos</h2>
+      <img class='max-[350px]:hidden absolute top-8 -left-6 sm:-left-4 lg:-left-5 w-[180px] sn:w-[200px] lg:w-[245px]' src="/illustrations/projects-title.svg" alt="titulo">
+      <h2 class='relative font-semibold text-2xl sm:text-3xl lg:text-4xl'>Mis proyectos</h2>
       <div class='flex flex-wrap justify-center gap-8'>
         {
           projects.map(project => (            
@@ -17,10 +18,29 @@ import { projects } from "./projectsData"
 </section>
 
 <script is:inline>
-  document.querySelectorAll('.custom-scroll').forEach(element => {
-    element.addEventListener('wheel', (e) => {
-      console.log(e.deltaY)
-      element.scrollLeft += e.deltaY
+  const scrollContent = document.querySelectorAll('.custom-scroll')
+  let isDragging = false
+  let initialX
+  let initialScroll
+
+  scrollContent.forEach(element => {
+    element.addEventListener('mousedown', (event) => {
+      isDragging = true
+      initialX = event.clientX
+      initialScroll = element.scrollLeft
+      element.style.cursor = 'grabbing'
+    })
+
+    document.addEventListener('mousemove', (event) => {
+      if (isDragging) {
+        const deltaX = event.clientX - initialX
+        element.scrollLeft = initialScroll - deltaX
+      }
+    })
+
+    document.addEventListener('mouseup', () => {
+      isDragging = false
+      element.style.cursor = 'grab'
     })
   })
 </script>

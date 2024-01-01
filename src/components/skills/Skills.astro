@@ -2,7 +2,8 @@
 import SliderSkills from './SliderSkills.astro'
 ---
 
-<section id='skills' class='mb-8 flex flex-col gap-8 pt-10'>
-  <h2 class='font-semibold text-2xl sm:text-3xl lg:text-4xl'>Mis habilidades</h2>
+<section id='skills' class='relative mb-8 flex flex-col gap-8 pt-10'>
+  <img class='max-[350px]:hidden absolute top-8 lg:top-7 -left-6 sm:-left-4 lg:-left-5 w-[200px] sm:w-[230px] lg:w-[280px]' src="/illustrations/skills-title.svg" alt="titulo">
+  <h2 class='relative font-semibold text-2xl sm:text-3xl lg:text-4xl text-white'>Mis habilidades</h2>
   <SliderSkills />
 </section>
