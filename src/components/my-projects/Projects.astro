@@ -3,7 +3,7 @@ import ProjectCard from "./ProjectCard.astro"
 import { projects } from "./projectsData"
 ---
 
-<section>
+<section id='projects' class='pt-10'>
     <div class='flex flex-col gap-8'>
       <h2 class='font-semibold text-2xl sm:text-3xl lg:text-4xl'>Mis proyectos</h2>
       <div class='flex flex-wrap justify-center gap-8'>
@@ -24,12 +24,3 @@ import { projects } from "./projectsData"
     })
   })
 </script>
-
-<style>
-  div::-webkit-scrollbar {
-    display: none;
-  }
-  div::-webkit-scrollbar-thumb {
-    display: none;
-  }
-</style>

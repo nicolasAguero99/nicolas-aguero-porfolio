@@ -1,7 +1,144 @@
 <nav>
-  <ul class='flex gap-10'>
-    <li><a href='#about-me'>Sobre mí</a></li>
-    <li><a href='#skills'>Mis habilidades</a></li>
-    <li><a href='#projects'>Mis proyectos</a></li>
+  <button id='toogle-menu-btn' class='md:hidden'>
+    <!-- <img id='toogle-menu-btn-img' class='w-8 transition-all duration-300' src="/icons/menu-icon.svg" alt="abrir menu"> -->
+    <div id='toogle-menu-btn-img' class='relative flex flex-col gap-y-1.5 [&>span]:bg-white [&>span]:w-8 [&>span]:h-1 [&>span]:rounded-full z-40 custom-btn-menu-exit'>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </button>
+  <ul id='menu' class='flex max-md:flex-col max-md:absolute top-24 right-10 max-md:text-right max-sm:text-base text-lg gap-10 select-none max-md:[&>li]:translate-x-[250px] z-40'>
+    <li class='duration-300'><a href='#about-me'>Sobre mí</a></li>
+    <li class='duration-500'><a href='#skills'>Mis habilidades</a></li>
+    <li class='duration-700'><a href='#projects'>Mis proyectos</a></li>
   </ul>
+  <div id='bckg-shape' class='md:hidden absolute top-0 -right-[500px] bg-primary/80 w-[400px] h-[600px] transition-[right] duration-300 z-30 custom-shape'></div>
 </nav>
+
+<style>
+  .custom-shape {
+    clip-path: polygon(0 0, 100% 100%, 100% 0);
+  }
+
+  .custom-btn-menu > span:nth-child(1) {
+    animation: arrow-side-up 0.3s ease-out forwards;
+  }
+
+  .custom-btn-menu > span:nth-child(3) {
+    animation: arrow-side-down 0.3s ease-out forwards;
+  }
+
+  .custom-btn-menu-exit > span:nth-child(1) {
+    animation: arrow-side-up-exit 0.3s ease-out forwards;
+  }
+
+  .custom-btn-menu-exit > span:nth-child(3) {
+    animation: arrow-side-down-exit 0.3s ease-out forwards;
+  }
+
+  @keyframes arrow-side-up {
+    0% {
+      transform: translate(0) rotate(0);
+    }
+
+    100% {
+      transform: translate(17px, 4px) rotate(45deg);
+      width: 16px;
+    }
+  }
+
+  @keyframes arrow-side-down {
+    0% {
+      transform: translate(0) rotate(0);
+    }
+
+    100% {
+      transform: translate(17px, -4px) rotate(-45deg);
+      width: 16px;
+    }
+  }
+
+  @keyframes arrow-side-up-exit {
+    0% {
+      transform: translate(17px, 4px) rotate(45deg);
+      width: 16px;
+    }
+    
+    100% {
+      transform: translate(0) rotate(0);
+    }
+  }
+
+  @keyframes arrow-side-down-exit {
+    0% {
+      transform: translate(17px, -4px) rotate(-45deg);
+      width: 16px;
+    }
+
+    100% {
+      transform: translate(0) rotate(0);
+    }
+  }
+
+  .custom-entry {
+    animation: custom-entry 0.3s ease-out;
+  }
+
+  .custom-exit {
+    animation: custom-exit 0.3s ease-out;
+  }
+
+  @keyframes custom-entry {
+    0% {
+      opacity: 0;
+      transform: translateX(-100%);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes custom-exit {
+    0% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    100% {
+      opacity: 0;
+      transform: translateX(100%);
+    }
+  }
+</style>
+
+<script is:inline>
+  document.getElementById('toogle-menu-btn').addEventListener('click', () => {
+    document.getElementById('menu').classList.toggle("max-md:[&>li]:translate-x-[250px]")
+    document.getElementById('toogle-menu-btn-img').classList.toggle("custom-btn-menu")
+    document.getElementById('toogle-menu-btn-img').classList.toggle("custom-btn-menu-exit")
+    document.getElementById('bckg-shape').classList.toggle("right-0")
+    document.getElementById('bckg-shape').classList.toggle("-right-[500px]")
+  })
+
+  // const nav = document.querySelector('nav')
+  // const navLinks = nav.querySelectorAll('a')
+  // const sections = document.querySelectorAll('section')
+
+  // const observer = new IntersectionObserver(entries => {
+  //   entries.forEach(entry => {
+  //     if (entry.isIntersecting) {
+  //       const section = entry.target
+  //       const sectionId = section.id
+  //       const navLink = nav.querySelector(`a[href='#${sectionId}']`)
+  //       navLinks.forEach(link => link.classList.remove('active'))
+  //       navLink.classList.add('active')
+  //     }
+  //   })
+  // }, {
+  //   rootMargin: '0px 0px -50% 0px'
+  // })
+
+  // sections.forEach(section => observer.observe(section))
+</script>

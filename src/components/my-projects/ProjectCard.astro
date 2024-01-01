@@ -4,10 +4,10 @@ import { type Technologies } from './projectsData'
 ---
 
 <div class='relative w-full max-w-[500px] rounded-3xl pb-8'>
-  <img class='w-full h-[250px] rounded-3xl object-cover' src={imageSrc} alt={`${title} foto`}>
-  <div class='h-[400px] flex flex-col gap-8 px-6 -mt-10 pt-16 border-2 border-primary rounded-3xl'>
+  <img class='w-full h-[320px] rounded-3xl object-cover' src={imageSrc} alt={`${title} foto`}>
+  <div class='min-[860px]:h-[400px] flex flex-col gap-8 px-6 -mt-10 pt-16 max-[860px]:pb-6 border-2 border-primary rounded-3xl'>
   <h3 class='font-semibold text-3xl'>{title}</h3>
-  <p class='h-[100px] text-lg'>{description}</p>
+  <p class='h-full min-[860px]:h-[100px] text-lg'>{description}</p>
     <div class='flex gap-2 overflow-x-auto py-2 custom-scroll'>
       {
         technologies.map((technology: Technologies) => (
@@ -15,7 +15,7 @@ import { type Technologies } from './projectsData'
         ))
       }
     </div>
-    <div class='flex gap-8'>
+    <div class='flex max-sm:flex-col gap-y-4 gap-8'>
       {
         projectLink &&
         <a href={projectLink} target='_blank' class='flex gap-2 text-primary hover:underline'>
@@ -30,3 +30,13 @@ import { type Technologies } from './projectsData'
     </div>
   </div>
 </div>
+
+
+<style>
+  .custom-scroll::-webkit-scrollbar {
+    display: none;
+  }
+  .custom-scroll::-webkit-scrollbar-thumb {
+    display: none;
+  }
+</style>
