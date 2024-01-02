@@ -16,6 +16,19 @@
 </nav>
 
 <style>
+  #menu > li > a:after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background-color: #6167FF;
+    transition: width 0.3s;
+  }
+
+  #menu > li > a:hover:after {
+    width: 100%;
+  }
+
   .custom-shape {
     clip-path: polygon(0 0, 100% 100%, 100% 0);
   }
