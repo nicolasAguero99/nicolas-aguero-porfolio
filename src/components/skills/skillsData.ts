@@ -31,6 +31,12 @@ export const carouselItems: SkillsData[] = [
     category: "Front End"
   },
   {
+    imgSrc: "/icons/nextjs-icon.svg",
+    imgAlt: "Next icon",
+    title: "Next",
+    category: "Front End"
+  },
+  {
     imgSrc: "/icons/tailwind-icon.svg",
     imgAlt: "Tailwind icon",
     title: "Tailwind",
