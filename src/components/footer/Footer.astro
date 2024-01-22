@@ -1,6 +1,12 @@
+---
+import { getI18N } from '../../i18n'
+const i18n = getI18N(Astro.url.pathname)
+const currentYear = new Date().getFullYear()
+---
+
 <footer class="rounded-lg shadow w-full py-6 m-auto">
   <div class="flex flex-wrap w-full items-center justify-between gap-6 text-center">
-    <span class="text-sm text-gray-400 text-center max-[860px]:m-auto">© 2024 Nicolás Martín Agüero. Derechos reservados.</span>
+    <span class="text-sm text-gray-400 text-center max-[860px]:m-auto">© {currentYear} Nicolás Martín Agüero. {i18n.FOOTER_RIGHTS}.</span>
     <ul class="flex flex-wrap gap-4 items-center mt-3 text-sm font-medium text-gray-400 sm:mt-0 max-[860px]:m-auto">
       <li class='hover:text-primary hover:underline transition-colors duration-300 ease-out'>
         <a target='_blank' href="mailto:aguero.nicolas2003@gmail.com">Email</a>

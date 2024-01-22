@@ -1,18 +1,17 @@
+---
+import { getI18N } from '../../i18n/index.js'
+const i18n = getI18N(Astro.url.pathname)
+---
 <main class='flex max-[860px]:flex-col-reverse gap-y-10 justify-between items-center'>
   <div class='flex flex-col gap-8'>
-    <h1 class='max-[350px]:text-2xl text-3xl sm:text-4xl lg:text-5xl font-semibold'>Hola, soy <strong>Nicolás Agüero</strong></h1>
+    <h1 class='max-[350px]:text-2xl text-3xl sm:text-4xl lg:text-5xl font-semibold'>{i18n.TITLE_GREETING.TEXT}<strong> {i18n.TITLE_GREETING.STRONG}</strong></h1>
     <div class='flex items-center'>
       <span id='element-typed' class='max-[350px]:text-xl text-2xl sm:text-3xl lg:text-4xl font-medium text-primary whitespace-nowrap h-fit'></span>
     </div>
-    <p class='max-[350px]:w-full max-[350px]:text-sm sm:max-w-[480px] lg:max-w-[520px] pe-0lg:pe-6 text-base sm:text-lg lg:text-xl text-pretty'>
-      Más de 4 años de experiencia personal en desarrollo y diseño web,
-      complementado con otros conocimientos relacionados.
-    </p>
+    <p class='max-[350px]:w-full max-[350px]:text-sm sm:max-w-[480px] lg:max-w-[520px] pe-0lg:pe-6 text-base sm:text-lg lg:text-xl text-pretty'>{i18n.SUBTITLE_HEADER}</p>
     <a href='mailto:aguero.nicolas2003@gmail.com' class='max-[350px]:w-full w-fit flex justify-center items-center gap-4 bg-primary rounded-full px-6 py-2'>
       <img class='max-[350px]:hidden w-6 lg:w-7' src="/icons/message-icon.svg" alt="sobre icono">
-      <span class='font-medium max-[350px]:text-sm text-base sm:text-lg'>
-        Trabajemos juntos
-      </span>
+      <span class='font-medium max-[350px]:text-sm text-base sm:text-lg'>{i18n.BUTTON_HEADER}</span>
     </a>
   </div>
   <div class='relative'>

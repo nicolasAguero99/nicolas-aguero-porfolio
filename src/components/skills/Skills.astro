@@ -1,9 +1,11 @@
 ---
 import SliderSkills from './SliderSkills.astro'
+import { getI18N } from '../../i18n'
+const i18n = getI18N(Astro.url.pathname)
 ---
 
 <section id='skills' class='relative mb-8 flex flex-col gap-8 pt-10'>
   <img class='max-[350px]:hidden absolute top-8 lg:top-7 -left-6 sm:-left-4 lg:-left-5 w-[200px] sm:w-[230px] lg:w-[280px]' src="/illustrations/skills-title.svg" alt="titulo">
-  <h2 class='relative font-semibold text-2xl sm:text-3xl lg:text-4xl text-white'>Mis habilidades</h2>
+  <h2 class='relative font-semibold text-2xl sm:text-3xl lg:text-4xl text-white'>{i18n.SKILLS_TITLE}</h2>
   <SliderSkills />
 </section>
