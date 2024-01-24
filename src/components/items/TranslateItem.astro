@@ -3,6 +3,9 @@ import UsaFlag from './Usa-icon.astro'
 import SpainFlag from './Spain-icon.astro'
 import { getI18N } from '../../i18n'
 const i18n = Astro.url.pathname
+
+console.log('i18n', i18n)
+
 ---
 
 <a href={i18n === '/en' ? '/' : '/en'} class='fixed bottom-6 right-8 size-16 z-50 bg-bckgDark rounded-full border-2 border-primary p-1'>
