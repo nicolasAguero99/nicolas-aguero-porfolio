@@ -13,5 +13,6 @@
   "ABOUT_ME_BUTTON": "Mirá mi CV",
   "SKILLS_TITLE": "Mis habilidades",
   "PROJECTS_TITLE": "Mis proyectos",
-  "FOOTER_RIGHTS": "Derechos reservados"
+  "FOOTER_RIGHTS": "Derechos reservados",
+  "URL_I18N": "/en"
 }

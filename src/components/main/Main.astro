@@ -29,8 +29,13 @@ const i18n = getI18N(Astro.url.pathname)
 
 <script is:inline src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
 <script is:inline>
+  const lang = window.location.pathname
+  const typedFeatures = lang !== '/en' 
+    ? ['Desarrollador Full Stack', 'Diseñador web'] 
+    : ['Full Stack developer', 'Web designer']
+
   new Typed('#element-typed', {
-    strings: ['Desarrollador Full Stack', 'Diseñador web'],
+    strings: [typedFeatures[0], typedFeatures[1]],
     typeSpeed: 50,
     backSpeed: 50,
     smartBackspace: true,
