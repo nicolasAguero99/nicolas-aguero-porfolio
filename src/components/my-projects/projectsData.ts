@@ -23,8 +23,8 @@ export const projects: Project[] = [
   {
     title: 'Ready',
     imageSrc: '/images/Ready.png',
-    description: 'Proyecto académico (tesis). Es una plataforma de gestión de tareas y gamificación para empresas. (Solicitar acceso para ver código)',
-    descriptionEnlgish: 'Academic project (thesis). It is a task management and gamification platform for companies. (Request access to see code)',
+    description: 'Proyecto académico (tesis). Es una plataforma de gestión de tareas y gamificación para empresas.',
+    descriptionEnlgish: 'Academic project (thesis). It is a task management and gamification platform for companies.',
     technologies: ['React', 'Node', 'Mongo Db', 'Axios', 'Jwt', 'Socket.io'],
     projectLink: 'https://ready-app-gamma.vercel.app/',
     codeLink: 'https://github.com/nicolasAguero99/Ready-project'
@@ -32,8 +32,8 @@ export const projects: Project[] = [
   {
     title: 'Nowly',
     imageSrc: '/images/Nowly.png',
-    description: 'Proyecto personal de una aplicación de organización, meditaciones y música para estudio y día a día. (Solicitar acceso para ver el código)',
-    descriptionEnlgish: 'Personal project of an organization, meditations and music application for study and day to day. (Request access to see the code)',
+    description: 'Proyecto personal de una aplicación de organización, meditaciones y música para estudio y día a día.',
+    descriptionEnlgish: 'Personal project of an organization, meditations and music application for study and day to day.',
     technologies: ['React native'],
     projectLink: '',
     codeLink: 'https://github.com/nicolasAguero99/Nowly-project'
