@@ -8,9 +8,18 @@ interface Project {
   codeLink: string
 }
 
-export type Technologies = 'React' | 'React native' | 'Node' | 'Mongo Db' | 'Axios' | 'Jwt' | 'Socket.io' | 'SCSS' | 'Tailwind' | 'Three.js' | 'HTML' | 'CSS' | 'Javascript' | 'PWA' | 'API' | 'Bootstrap' | 'PHP' | 'MySql' | 'Vue' | 'Firebase'
+export type Technologies = 'Next' | 'React' | 'TypeScript' | 'React native' | 'Node' | 'Mongo Db' | 'Axios' | 'Jwt' | 'Socket.io' | 'SCSS' | 'Tailwind' | 'Three.js' | 'HTML' | 'CSS' | 'Javascript' | 'PWA' | 'API' | 'Bootstrap' | 'PHP' | 'MySql' | 'Vue' | 'Firebase' | 'Prisma' | 'Zod' | 'Chart.Js'
 
 export const projects: Project[] = [
+  {
+    title: 'Entreprise platform',
+    imageSrc: '/images/Entreprise-Platform.png',
+    description: 'Proyecto personal. Es un administrador de empresas/compañías en el cual podrás tener un registro de las operaciones económicas.',
+    descriptionEnlgish: 'Personal project. It is a business/company administrator in which you can have a record of economic operations.',
+    technologies: ['Next', 'TypeScript', 'Prisma', 'Zod', 'Chart.Js'],
+    projectLink: 'https://entreprise-platform-project.vercel.app/',
+    codeLink: 'https://github.com/nicolasAguero99/entreprise-platform-project'
+  },
   {
     title: 'Ready',
     imageSrc: '/images/Ready.png',
