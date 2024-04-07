@@ -8,15 +8,24 @@ interface Project {
   codeLink: string
 }
 
-export type Technologies = 'Next' | 'React' | 'TypeScript' | 'React native' | 'Node' | 'Mongo Db' | 'Axios' | 'Jwt' | 'Socket.io' | 'SCSS' | 'Tailwind' | 'Three.js' | 'HTML' | 'CSS' | 'Javascript' | 'PWA' | 'API' | 'Bootstrap' | 'PHP' | 'MySql' | 'Vue' | 'Firebase' | 'Prisma' | 'Zod' | 'Chart.Js'
+export type Technologies = 'Next' | 'React' | 'TypeScript' | 'React native' | 'Node' | 'Mongo Db' | 'Axios' | 'Jwt' | 'Socket.io' | 'SCSS' | 'Tailwind' | 'Three.js' | 'HTML' | 'CSS' | 'Javascript' | 'PWA' | 'API' | 'Bootstrap' | 'PHP' | 'MySql' | 'Vue' | 'Firebase' | 'Prisma' | 'Zod' | 'Chart.Js' | 'MercadoPago' | 'Zustand' | 'React-hook-forms'
 
 export const projects: Project[] = [
+  {
+    title: 'All in one',
+    imageSrc: '/images/All-In-One.png',
+    description: 'Proyecto personal. Es una página web que ofrece diferentes servicios como: acortar URL, subir archivos a la nube y generar codigos QR.',
+    descriptionEnlgish: 'Personal project. It is a website that offers different services such as: shortening URLs, uploading files to the cloud and generating QR codes.',
+    technologies: ['Next', 'TypeScript', 'Firebase', 'MercadoPago', 'Zustand', 'React-hook-forms', 'Zod', 'Tailwind'],
+    projectLink: 'https://all-in-one-sooty.vercel.app/',
+    codeLink: 'https://github.com/nicolasAguero99/all-in-one'
+  },
   {
     title: 'Entreprise platform',
     imageSrc: '/images/Entreprise-Platform.png',
     description: 'Proyecto personal. Es un administrador de empresas/compañías en el cual podrás tener un registro de las operaciones económicas.',
     descriptionEnlgish: 'Personal project. It is a business/company administrator in which you can have a record of economic operations.',
-    technologies: ['Next', 'TypeScript', 'Prisma', 'Zod', 'Chart.Js'],
+    technologies: ['Next', 'TypeScript', 'Prisma', 'Zod', 'Chart.Js', 'Tailwind'],
     projectLink: 'https://entreprise-platform-project.vercel.app/',
     codeLink: 'https://github.com/nicolasAguero99/entreprise-platform-project'
   },

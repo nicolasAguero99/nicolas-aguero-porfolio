@@ -2,7 +2,7 @@ export interface SkillsData {
   imgSrc: `/icons/${string}-icon.svg`
   imgAlt: `${string} icon`
   title: string
-  category: 'Front End' | 'Back End' | 'Cms'
+  category: 'Front End' | 'Back End' | 'Cms' | 'Data Base'
 }
 
 export const carouselItems: SkillsData[] = [
@@ -55,6 +55,12 @@ export const carouselItems: SkillsData[] = [
     category: "Back End"
   },
   {
+    imgSrc: "/icons/python-icon.svg",
+    imgAlt: "Python icon",
+    title: "Python",
+    category: "Back End"
+  },
+  {
     imgSrc: "/icons/php-icon.svg",
     imgAlt: "Php icon",
     title: "Php",
@@ -64,13 +70,19 @@ export const carouselItems: SkillsData[] = [
     imgSrc: "/icons/mongodb-icon.svg",
     imgAlt: "Mongo Db icon",
     title: "Mongo Db",
-    category: "Back End"
+    category: "Data Base"
+  },
+  {
+    imgSrc: "/icons/firebase-icon.svg",
+    imgAlt: "Firebase icon",
+    title: "Firebase",
+    category: "Data Base"
   },
   {
     imgSrc: "/icons/mysql-icon.svg",
     imgAlt: "MySql icon",
     title: "MySql",
-    category: "Back End"
+    category: "Data Base"
   },
   {
     imgSrc: "/icons/wordpress-icon.svg",
