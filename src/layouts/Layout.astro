@@ -1,38 +1,62 @@
 ---
-import Header from '../components/header/Header.astro'
-import Footer from '../components/footer/Footer.astro'
-import SocialItem from '../components/items/SocialItem.astro'
-import '@fontsource/poppins'
-import TranslateItem from '../components/items/TranslateItem.astro'
+import Header from "../components/header/Header.astro";
+import Footer from "../components/footer/Footer.astro";
+import SocialItem from "../components/items/SocialItem.astro";
+import "@fontsource/poppins";
+import TranslateItem from "../components/items/TranslateItem.astro";
 // console.log('Astro url:', Astro.url.pathname)
 // import { getI18N } from '../i18n/index.js'
 // getI18N(Astro.url.pathname)
 ---
 
 <!doctype html>
-<html lang="es">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Portfolio de Nicolás Agüero. Desarrollador Full Stack y diseñador web." />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,user-scalable=0" />
-    <meta property="og:title" content="Nicolas Aguero - Portfolio">
-    <meta property="og:description" content="Portfolio Full Stack y diseñador web - Nicolás Agüero.">
-    <meta property="og:image" content="/images/preview-url.jpg">
-    <meta property="og:url" content="https://nicolas-aguero-porfolio.vercel.app">
-    <meta property="og:type" content="website">
-    <meta name="author" content="Nicolás Agüero">
-    <meta name="robots" content="index, follow">
-    <meta name="format-detection" content="telephone=no">
-    <meta name="copyright" content="© 2024 Nicolás Agüero">
-    <meta name="HandheldFriendly" content="true">
-    <meta name="publisher" content="Nicolás Martín Agüero">
-    <meta name="telephone" content="+5440974316">
-    <meta name="theme-color" content="#6167FF">
-    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-		<meta name="generator" content={Astro.generator} />
-		<title>Nicolas Aguero - Portfolio</title>
-	</head>
-	<body class='bg-bckgDark flex flex-col px-10'>
+<html lang='es'>
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src='https://www.googletagmanager.com/gtag/js?id=G-PZH5SL6TRK'
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-PZH5SL6TRK");
+    </script>
+    <meta charset='UTF-8' />
+    <meta
+      name='description'
+      content='Portfolio de Nicolás Agüero. Desarrollador Full Stack y diseñador web.'
+    />
+    <meta
+      name='viewport'
+      content='width=device-width, initial-scale=1.0, maximum-scale=1.0,user-scalable=0'
+    />
+    <meta property='og:title' content='Nicolas Aguero - Portfolio' />
+    <meta
+      property='og:description'
+      content='Portfolio Full Stack y diseñador web - Nicolás Agüero.'
+    />
+    <meta property='og:image' content='/images/preview-url.jpg' />
+    <meta
+      property='og:url'
+      content='https://nicolas-aguero-porfolio.vercel.app'
+    />
+    <meta property='og:type' content='website' />
+    <meta name='author' content='Nicolás Agüero' />
+    <meta name='robots' content='index, follow' />
+    <meta name='format-detection' content='telephone=no' />
+    <meta name='copyright' content='© 2024 Nicolás Agüero' />
+    <meta name='HandheldFriendly' content='true' />
+    <meta name='publisher' content='Nicolás Martín Agüero' />
+    <meta name='telephone' content='+5440974316' />
+    <meta name='theme-color' content='#6167FF' />
+    <link rel='shortcut icon' href='/favicon.ico' type='image/x-icon' />
+    <meta name='generator' content={Astro.generator} />
+    <title>Nicolas Aguero - Portfolio</title>
+  </head>
+  <body class='bg-bckgDark flex flex-col px-10'>
     <Header />
     <TranslateItem />
     <SocialItem />
@@ -40,9 +64,17 @@ import TranslateItem from '../components/items/TranslateItem.astro'
       <slot />
     </div>
     <Footer />
-    <img class='max-[850px]:hidden absolute top-0 left-0 w-[200vw] max-h-[600vh] -z-10' src="/illustrations/flashes-bckg.png" alt="destello illustración">
-    <img class='min-[850px]:hidden absolute top-0 left-0 w-[200vw] max-h-[1100vh] -z-10' src="/illustrations/flashes-bckg-mobile.png" alt="destello illustración">
-	</body>
+    <img
+      class='max-[850px]:hidden absolute top-0 left-0 w-[200vw] max-h-[600vh] -z-10'
+      src='/illustrations/flashes-bckg.png'
+      alt='destello illustración'
+    />
+    <img
+      class='min-[850px]:hidden absolute top-0 left-0 w-[200vw] max-h-[1100vh] -z-10'
+      src='/illustrations/flashes-bckg-mobile.png'
+      alt='destello illustración'
+    />
+  </body>
 </html>
 
 <style>
@@ -63,7 +95,7 @@ import TranslateItem from '../components/items/TranslateItem.astro'
   }
 
   html::-webkit-scrollbar-thumb {
-    background-color: #6167FF;
+    background-color: #6167ff;
     border-radius: 100px;
   }
 
@@ -71,7 +103,7 @@ import TranslateItem from '../components/items/TranslateItem.astro'
     overflow-x: hidden;
     max-width: 1200px;
     margin: 20px auto;
-    font-family: 'Poppins', sans-serif;
+    font-family: "Poppins", sans-serif;
     color: white;
   }
 </style>
