@@ -13,6 +13,7 @@
   "ABOUT_ME_BUTTON": "See my CV",
   "SKILLS_TITLE": "My skills",
   "PROJECTS_TITLE": "My projects",
+  "WARNING_PROJECTS": "Being deployed on free servers, it is likely that some projects will not work as they should",
   "FOOTER_RIGHTS": "All rights reserved",
   "URL_I18N": "/"
 }
