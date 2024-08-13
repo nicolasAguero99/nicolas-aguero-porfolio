@@ -8,9 +8,18 @@ interface Project {
   codeLink: string
 }
 
-export type Technologies = 'Next' | 'React' | 'TypeScript' | 'React native' | 'Node' | 'Mongo Db' | 'Axios' | 'Jwt' | 'Socket.io' | 'SCSS' | 'Tailwind' | 'Three.js' | 'HTML' | 'CSS' | 'Javascript' | 'PWA' | 'API' | 'Bootstrap' | 'PHP' | 'MySql' | 'Vue' | 'Firebase' | 'Prisma' | 'Zod' | 'Chart.Js' | 'MercadoPago' | 'Zustand' | 'React-hook-forms'
+export type Technologies = 'Next' | 'React' | 'TypeScript' | 'React native' | 'Node' | 'Mongo Db' | 'Axios' | 'Jwt' | 'Socket.io' | 'SCSS' | 'Tailwind' | 'Three.js' | 'HTML' | 'CSS' | 'Javascript' | 'PWA' | 'API' | 'Bootstrap' | 'PHP' | 'MySql' | 'Vue' | 'Firebase' | 'Prisma' | 'Zod' | 'Chart.Js' | 'MercadoPago' | 'Zustand' | 'React-hook-forms' |'WhatsApp'
 
 export const projects: Project[] = [
+  {
+    title: 'Astrobel',
+    imageSrc: '/images/Astrobel.png',
+    description: 'Proyecto freelance. Es una tienda que ofrece lecturas de cartas astrales que contienen diferentes objetivos e información, además de contar con una carta astral personalizada.',
+    descriptionEnlgish: 'Freelance project. It is a store that offers astral chart readings that contain different objectives and information, as well as having a personalized astral chart.',
+    technologies: ['Next', 'TypeScript', 'WhatsApp', 'Tailwind'],
+    projectLink: 'https://astrobel-store.vercel.app/',
+    codeLink: 'https://github.com/nicolasAguero99/astrobel-store'
+  },
   {
     title: 'All in one',
     imageSrc: '/images/All-In-One.png',
