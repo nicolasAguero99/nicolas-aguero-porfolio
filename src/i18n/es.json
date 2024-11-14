@@ -7,7 +7,7 @@
   "BUTTON_HEADER": "Trabajemos juntos",
   "ABOUT_ME_TITLE": "Sobre mí",
     "ABOUT_ME_PARAGRAPH": {
-    "TEXT": ["Mi nombre es", ", tengo 20 años y vivo en Buenos Aires (CABA), Argentina", "Soy un apasionado desarrollador y diseñador web Full-Stack, especializado en front-end.", "Me recibí en", "en la"],
+    "TEXT": ["Mi nombre es", ", tengo 21 años y vivo en Buenos Aires (CABA), Argentina", "Soy un apasionado desarrollador y diseñador web Full-Stack, especializado en front-end.", "Me recibí en", "en la"],
     "TEXT_STRONG": ["Nicolás Agüero", "Técnico Superior en Diseño y Programación Web", "Escuela Da Vinci."] 
   },
   "ABOUT_ME_BUTTON": "Mirá mi CV",
