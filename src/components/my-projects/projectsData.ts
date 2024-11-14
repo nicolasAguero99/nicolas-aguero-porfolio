@@ -11,7 +11,7 @@ interface Project {
 export type Technologies = 'Next' | 'React' | 'TypeScript' | 'React native' | 'Node' | 'Mongo Db' | 'Axios' | 'Jwt' | 'Socket.io' | 'SCSS' | 'Tailwind' | 'Three.js' | 'HTML' | 'CSS' | 'Javascript' | 'PWA' | 'API' | 'Bootstrap' | 'PHP' | 'MySql' | 'Vue' | 'Firebase' | 'Prisma' | 'Zod' | 'Chart.Js' | 'MercadoPago' | 'Zustand' | 'React-hook-forms' |'WhatsApp' | 'Rollup' | 'Npm'
 
 export const projects: Project[] = [
-    {
+  {
     title: 'Astrobel',
     imageSrc: '/images/Astrobel.png',
     description: 'Proyecto freelance. Es una tienda que ofrece lecturas de cartas astrales que contienen diferentes objetivos e información, además de contar con una carta astral personalizada.',
