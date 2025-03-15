@@ -1,5 +1,11 @@
 ---
 import { getI18N } from '../../i18n/index.js'
+const birth_year = 2003;
+const birth_month = 9;
+const birth_day = 2;
+const today = new Date();
+const age = today.getFullYear() - birth_year - (today.getMonth() + 1 < birth_month || (today.getMonth() + 1 === birth_month && today.getDate() < birth_day) ? 1 : 0);
+
 const i18n = getI18N(Astro.url.pathname)
 ---
 
@@ -13,7 +19,7 @@ const i18n = getI18N(Astro.url.pathname)
       <img class='max-[350px]:hidden absolute -top-2 sm:-top-3 -left-5 w-[120px] sm:w-[140px] lg:w-[160px]' src="/illustrations/about-me-title.svg" alt="titulo">
       <h2 id='about-me-title' class='relative font-semibold text-2xl sm:text-3xl lg:text-4xl'>{i18n.ABOUT_ME_TITLE}</h2>
       <p class='max-w-[480px] lg:max-w-[560px] max-[350px]:text-sm text-base sm:text-lg text-pretty after:max-[350px]:text-sm after:text-base after:sm:text-lg'>
-        {i18n.ABOUT_ME_PARAGRAPH.TEXT[0]} <strong class='text-primary'>{i18n.ABOUT_ME_PARAGRAPH.TEXT_STRONG[0]}</strong>{i18n.ABOUT_ME_PARAGRAPH.TEXT[1]}<br>
+        {i18n.ABOUT_ME_PARAGRAPH.TEXT[0]} <strong class='text-primary'>{i18n.ABOUT_ME_PARAGRAPH.TEXT_STRONG[0]}</strong>{i18n.ABOUT_ME_PARAGRAPH.TEXT[1].replace('{{age}}', age.toString())}<br>
         {i18n.ABOUT_ME_PARAGRAPH.TEXT[2]}<br>
         {i18n.ABOUT_ME_PARAGRAPH.TEXT[3]} <strong class='text-primary'>{i18n.ABOUT_ME_PARAGRAPH.TEXT_STRONG[1]}</strong> {i18n.ABOUT_ME_PARAGRAPH.TEXT[4]} <strong class='text-primary'><a class='underline' href='https://davinci.edu.ar/carreras/desarrollo-web-y-mobile' target='_blank'>"{i18n.ABOUT_ME_PARAGRAPH.TEXT_STRONG[2]}"</a></strong>
       </p>

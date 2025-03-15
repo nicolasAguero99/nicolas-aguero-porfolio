@@ -3,11 +3,11 @@
     "TEXT": "Hi, I'm",
     "STRONG": "Nicolás Agüero"
   },
-  "SUBTITLE_HEADER": "More than 4 years of personal experience in web development and design, complemented by other related knowledge.",
+  "SUBTITLE_HEADER": "More than {{exp}} years of personal experience in web development and design, complemented by other related knowledge.",
   "BUTTON_HEADER": "Let's work together",
   "ABOUT_ME_TITLE": "About me",
   "ABOUT_ME_PARAGRAPH": {
-    "TEXT": ["My name is", ", I am 21 years old and I live in Buenos Aires (CABA), Argentina.", "I am a passionate Full-Stack web developer and designer, specialized in front-end.", "I graduated as a", "at the"],
+    "TEXT": ["My name is", ", I am {{age}} years old and I live in Buenos Aires (CABA), Argentina.", "I am a passionate Full-Stack web developer and designer, specialized in front-end.", "I graduated as a", "at the"],
     "TEXT_STRONG": ["Nicolás Agüero", "Senior Technician in Web Design and Programming", "Escuela Da Vinci."] 
   },
   "ABOUT_ME_BUTTON": "See my CV",
