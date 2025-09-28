@@ -1,32 +1,96 @@
 ---
-import { getI18N } from '../../i18n/index.js'
-const birth_year = 2003;
-const birth_month = 9;
-const birth_day = 2;
-const today = new Date();
-const age = today.getFullYear() - birth_year - (today.getMonth() + 1 < birth_month || (today.getMonth() + 1 === birth_month && today.getDate() < birth_day) ? 1 : 0);
+import { getI18N } from "../../i18n/index.js";
 
-const i18n = getI18N(Astro.url.pathname)
+const i18n = getI18N(Astro.url.pathname);
 ---
 
 <section id='about-me' class='pt-10'>
   <div class='flex max-[860px]:flex-col gap-y-10 justify-between items-center'>
     <div class='relative'>
-      <img class='relative max-[350px]:w-[90%] w-[240px] lg:w-[280px] z-20 m-auto' src='/illustrations/me-emoji.png' alt='Nicolas Aguero avatar'/>
-      <img class='absolute top-0 bottom-0 left-0 right-0 m-auto max-[350px]:w-[90%] w-[240px] lg:w-[280px] z-10' src='/illustrations/blob-2.svg' alt='blob' />
+      <img
+        class='relative max-[350px]:w-[90%] w-[240px] lg:w-[280px] z-20 m-auto'
+        src='/illustrations/me-emoji.png'
+        alt='Nicolas Aguero avatar'
+      />
+      <img
+        class='absolute top-0 bottom-0 left-0 right-0 m-auto max-[350px]:w-[90%] w-[240px] lg:w-[280px] z-10'
+        src='/illustrations/blob-2.svg'
+        alt='blob'
+      />
     </div>
     <div class='relative flex flex-col gap-6'>
-      <img class='max-[350px]:hidden absolute -top-2 sm:-top-3 -left-5 w-[120px] sm:w-[140px] lg:w-[160px]' src="/illustrations/about-me-title.svg" alt="titulo">
-      <h2 id='about-me-title' class='relative font-semibold text-2xl sm:text-3xl lg:text-4xl'>{i18n.ABOUT_ME_TITLE}</h2>
-      <p class='max-w-[480px] lg:max-w-[560px] max-[350px]:text-sm text-base sm:text-lg text-pretty after:max-[350px]:text-sm after:text-base after:sm:text-lg'>
-        {i18n.ABOUT_ME_PARAGRAPH.TEXT[0]} <strong class='text-primary'>{i18n.ABOUT_ME_PARAGRAPH.TEXT_STRONG[0]}</strong>{i18n.ABOUT_ME_PARAGRAPH.TEXT[1].replace('{{age}}', age.toString())}<br>
-        {i18n.ABOUT_ME_PARAGRAPH.TEXT[2]}<br>
-        {i18n.ABOUT_ME_PARAGRAPH.TEXT[3]} <strong class='text-primary'>{i18n.ABOUT_ME_PARAGRAPH.TEXT_STRONG[1]}</strong> {i18n.ABOUT_ME_PARAGRAPH.TEXT[4]} <strong class='text-primary'><a class='underline' href='https://davinci.edu.ar/carreras/desarrollo-web-y-mobile' target='_blank'>"{i18n.ABOUT_ME_PARAGRAPH.TEXT_STRONG[2]}"</a></strong>
+      <img
+        class='max-[350px]:hidden absolute -top-2 sm:-top-3 -left-5 w-[120px] sm:w-[140px] lg:w-[160px]'
+        src='/illustrations/about-me-title.svg'
+        alt='titulo'
+      />
+      <h2
+        id='about-me-title'
+        class='relative font-semibold text-2xl sm:text-3xl lg:text-4xl'
+      >
+        {i18n.ABOUT_ME_TITLE}
+      </h2>
+      <p
+        class='max-w-[480px] lg:max-w-[560px] max-[350px]:text-sm text-base sm:text-lg text-pretty after:max-[350px]:text-sm after:text-base after:sm:text-lg'
+      >
+        {i18n.ABOUT_ME_PARAGRAPH.TEXT[0]}
+        <strong class='text-primary'
+          >{i18n.ABOUT_ME_PARAGRAPH.TEXT_STRONG[0]}</strong
+        >
+        <span
+          set:html={i18n.ABOUT_ME_PARAGRAPH.TEXT[1].replace(
+            "{{age}}",
+            "<span id='my-age'></span>"
+          )}
+        />
+        <br />
+        {i18n.ABOUT_ME_PARAGRAPH.TEXT[2]}<br />
+        {i18n.ABOUT_ME_PARAGRAPH.TEXT[3]}
+        <strong class='text-primary'
+          >{i18n.ABOUT_ME_PARAGRAPH.TEXT_STRONG[1]}</strong
+        >
+        {i18n.ABOUT_ME_PARAGRAPH.TEXT[4]}
+        <strong class='text-primary'
+          ><a
+            class='underline'
+            href='https://davinci.edu.ar/carreras/desarrollo-web-y-mobile'
+            target='_blank'>"{i18n.ABOUT_ME_PARAGRAPH.TEXT_STRONG[2]}"</a
+          ></strong
+        >
       </p>
-      <a href='/docs/Curriculum_Nicolas_Aguero.pdf' target='_blank' class='max-[350px]:w-full w-fit flex justify-center items-center gap-4 bg-primary rounded-full px-6 py-2'>
-        <img class='max-[350px]:hidden w-5 lg:w-6' src="/icons/cv-icon.svg" alt="cv icono">
-        <span class='font-medium max-[350px]:text-sm text-base sm:text-lg'>{i18n.ABOUT_ME_BUTTON}</span>
+      <a
+        href='/docs/Curriculum_Nicolas_Aguero.pdf'
+        target='_blank'
+        class='max-[350px]:w-full w-fit flex justify-center items-center gap-4 bg-primary rounded-full px-6 py-2'
+      >
+        <img
+          class='max-[350px]:hidden w-5 lg:w-6'
+          src='/icons/cv-icon.svg'
+          alt='cv icono'
+        />
+        <span class='font-medium max-[350px]:text-sm text-base sm:text-lg'
+          >{i18n.ABOUT_ME_BUTTON}</span
+        >
       </a>
     </div>
   </div>
 </section>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const birthDate = new Date(2003, 8, 2);
+    const today = new Date();
+    let age = today.getFullYear() - birthDate.getFullYear();
+
+    if (
+      today.getMonth() < birthDate.getMonth() ||
+      (today.getMonth() === birthDate.getMonth() &&
+        today.getDate() < birthDate.getDate())
+    ) {
+      age--;
+    }
+
+    const ageSpan = document.getElementById("my-age");
+    if (ageSpan) ageSpan.textContent = age;
+  });
+</script>

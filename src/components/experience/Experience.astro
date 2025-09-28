@@ -1,0 +1,99 @@
+---
+import { getI18N } from "../../i18n/index.js";
+import { experienciesItems } from "./experienciesData";
+const birth_year = 2003;
+const birth_month = 9;
+const birth_day = 2;
+const today = new Date();
+const age =
+  today.getFullYear() -
+  birth_year -
+  (today.getMonth() + 1 < birth_month ||
+  (today.getMonth() + 1 === birth_month && today.getDate() < birth_day)
+    ? 1
+    : 0);
+
+const i18n = getI18N(Astro.url.pathname);
+---
+
+<section id='experience' class='pt-10'>
+  <div class='flex max-[860px]:flex-col gap-y-10 justify-between items-center'>
+    <div class='relative flex flex-col gap-6'>
+      <img
+        class='max-[350px]:hidden absolute -top-2 sm:-top-3 -left-5 w-[120px] sm:w-[140px] lg:w-[160px]'
+        src='/illustrations/about-me-title.svg'
+        alt='titulo'
+      />
+      <h2
+        id='about-me-title'
+        class='relative font-semibold text-2xl sm:text-3xl lg:text-4xl'
+      >
+        {i18n.EXPERIENCE_TITLE}
+      </h2>
+      <div class='flex flex-col gap-8'>
+        {
+          i18n.EXPERIENCE_ITEMS.filter(
+            (experience) => !experience.isFreelance
+          ).map((experience) => (
+            <div class='flex flex-col gap-2'>
+              <div class='flex items-center gap-2'>
+                <h3 class='flex items-center gap-2 font-semibold text-2xl'>
+                  {experience.role} -{" "}
+                  <a
+                    href={experience.pageLink}
+                    target='_blank'
+                    class='flex gap-2 text-primary hover:underline'
+                  >
+                    <span class='text-primary'>{experience.company}</span>
+                    <img
+                      src='/icons/external-link-icon.svg'
+                      alt='link externo icono'
+                    />
+                  </a>
+                </h3>
+              </div>
+              <small class='text-sm capitalize text-gray-400'>
+                {experience.fromTo}
+              </small>
+              <p class='max-w-[9s0%] text-sm'>{experience.description}</p>
+            </div>
+          ))
+        }
+        <div class='flex flex-col gap-2'>
+          <h3 class='font-semibold text-3xl'>Freelance</h3>
+          <hr class='w-full border-gray-200' />
+        </div>
+        {
+          i18n.EXPERIENCE_ITEMS.filter(
+            (experience) => experience.isFreelance
+          ).map((experience) => (
+            <div class='flex flex-col gap-2'>
+              <h3 class='flex items-center gap-2 font-semibold text-2xl'>
+                {experience.role} -{" "}
+                {experience.pageLink ? (
+                  <a
+                    href={experience.pageLink}
+                    target='_blank'
+                    class='flex gap-2 text-primary hover:underline'
+                  >
+                    <span class='text-primary'>{experience.company}</span>
+                    <img
+                      src='/icons/external-link-icon.svg'
+                      alt='link externo icono'
+                    />
+                  </a>
+                ) : (
+                  <span class='text-primary'>{experience.company}</span>
+                )}
+              </h3>
+              <small class='text-sm capitalize text-gray-400'>
+                {experience.fromTo}
+              </small>
+              <p class='max-w-[9s0%] text-sm'>{experience.description}</p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</section>

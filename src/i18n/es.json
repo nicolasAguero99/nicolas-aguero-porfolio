@@ -6,11 +6,64 @@
   "SUBTITLE_HEADER": "Más de {{exp}} años de experiencia personal en desarrollo y diseño web, complementado con otros conocimientos relacionados.",
   "BUTTON_HEADER": "Trabajemos juntos",
   "ABOUT_ME_TITLE": "Sobre mí",
-    "ABOUT_ME_PARAGRAPH": {
-    "TEXT": ["Mi nombre es", ", tengo {{age}} años y vivo en Buenos Aires (CABA), Argentina", "Soy un apasionado desarrollador y diseñador web Full-Stack, especializado en front-end.", "Me recibí en", "en la"],
-    "TEXT_STRONG": ["Nicolás Agüero", "Técnico Superior en Diseño y Programación Web", "Escuela Da Vinci."] 
+  "ABOUT_ME_PARAGRAPH": {
+    "TEXT": [
+      "Mi nombre es",
+      ", tengo {{age}} años y vivo en Buenos Aires (CABA), Argentina",
+      "Soy un apasionado desarrollador y diseñador web Full-Stack, especializado en front-end.",
+      "Me recibí en",
+      "en la"
+    ],
+    "TEXT_STRONG": [
+      "Nicolás Agüero",
+      "Técnico Superior en Diseño y Programación Web",
+      "Escuela Da Vinci."
+    ]
   },
   "ABOUT_ME_BUTTON": "Mirá mi CV",
+  "EXPERIENCE_TITLE": "Mis experiencias",
+  "EXPERIENCE_ITEMS": [
+    {
+      "role": "Full Stack",
+      "company": "Pulpou",
+      "description": "Mi trabajo principal consistió en el desarrollo de funcionalidades de auditoría centralizada para la identificación de infracciones de propiedad intelectual de grandes empresas en marketplaces y e-commerce a nivel global. Esta plataforma se basaba en una Single Page Application (SPA) con React en el frontend y APIs robustas utilizando Node.js en el backend.",
+      "fromTo": "sep. 2024 - sep. 2025",
+      "isFreelance": false,
+      "pageLink": "https://pulpou.com"
+    },
+    {
+      "role": "Frontend",
+      "company": "Igrowker",
+      "description": "Simulación laboral en la que consistía en Web app para conductores con muestra de eventos, utilizando Next.js, TypeScript, Tailwind",
+      "fromTo": "sep. 2024 - oct. 2024",
+      "isFreelance": true,
+      "pageLink": "https://igrowker.com"
+    },
+    {
+      "role": "Full Stack",
+      "company": "No Country",
+      "description": "Simulación laboral en la que consistía en Web app para un servicio que conecta cuidadores de mascotas con dueños, utilizando React, Tailwind, Redux",
+      "fromTo": "ago. 2024 - sep. 2024",
+      "isFreelance": true,
+      "pageLink": "https://nocountry.tech"
+    },
+    {
+      "role": "Frontend",
+      "company": "Astrobel",
+      "description": "Tienda para lecturas astrológicas, utilizando Next.js, TypeScript y Tailwind.",
+      "fromTo": "may. 2024 - jul. 2024",
+      "isFreelance": true,
+      "pageLink": "https://astrobel-store.vercel.app"
+    },
+    {
+      "role": "Full Stack",
+      "company": "Ministerio de Turismo",
+      "description": "Creación de encuesta en el software LimeSurvey, utilizando HTML, CSS y PHP.",
+      "fromTo": "oct. 2023 - dic. 2023",
+      "isFreelance": true,
+      "pageLink": ""
+    }
+  ],
   "SKILLS_TITLE": "Mis habilidades",
   "PROJECTS_TITLE": "Mis proyectos",
   "WARNING_PROJECTS": "Al estar alojados en servidores gratuitos, es probable que algunos proyectos no funcionen como deberían",
