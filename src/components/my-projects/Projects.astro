@@ -7,8 +7,13 @@ const i18n = getI18N(Astro.url.pathname)
 
 <section id='projects' class='relative pt-10'>
   <div class='flex flex-col gap-8'>
-    <img class='max-[350px]:hidden absolute top-8 -left-6 sm:-left-4 lg:-left-5 w-[180px] sn:w-[200px] lg:w-[245px]' src="/illustrations/projects-title.svg" alt="titulo">
-    <h2 class='relative font-semibold text-2xl sm:text-3xl lg:text-4xl'>{i18n.PROJECTS_TITLE}</h2>
+    <!-- <img class='max-[350px]:hidden absolute top-8 -left-6 sm:-left-4 lg:-left-5 w-[180px] sn:w-[200px] lg:w-[245px]' src="/illustrations/projects-title.svg" alt="titulo"> -->
+    <div class='relative'>
+      <span class='absolute -top-3 font-semibold text-primary text-2xl sm:text-3xl lg:text-4xl blur-[2px] scale-110'>
+        {i18n.PROJECTS_TITLE}
+      </span>
+      <h2 class='relative font-semibold text-2xl sm:text-3xl lg:text-4xl'>{i18n.PROJECTS_TITLE}</h2>
+    </div>
     <p class='text-sm opacity-60 text-center'>{i18n.WARNING_PROJECTS}</p>
     <div class='flex flex-wrap justify-center gap-8'>
       {

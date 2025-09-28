@@ -1,35 +1,28 @@
 ---
 import { getI18N } from "../../i18n/index.js";
 
-const birth_year = 2003;
-const birth_month = 9;
-const birth_day = 2;
-const today = new Date();
-const age =
-  today.getFullYear() -
-  birth_year -
-  (today.getMonth() + 1 < birth_month ||
-  (today.getMonth() + 1 === birth_month && today.getDate() < birth_day)
-    ? 1
-    : 0);
-
 const i18n = getI18N(Astro.url.pathname);
 ---
 
 <section id='experience' class='pt-10'>
   <div class='flex max-[860px]:flex-col gap-y-10 justify-between items-center'>
     <div class='relative flex flex-col gap-6'>
-      <img
+      <!-- <img
         class='max-[350px]:hidden absolute -top-2 sm:-top-3 -left-5 w-[120px] sm:w-[140px] lg:w-[160px]'
         src='/illustrations/about-me-title.svg'
         alt='titulo'
-      />
-      <h2
-        id='about-me-title'
-        class='relative font-semibold text-2xl sm:text-3xl lg:text-4xl'
-      >
-        {i18n.EXPERIENCE_TITLE}
-      </h2>
+      /> -->
+      <div class='relative'>
+        <span class='absolute -top-3 font-semibold text-primary text-2xl sm:text-3xl lg:text-4xl blur-[2px] scale-110'>
+          {i18n.EXPERIENCE_TITLE}
+        </span>
+        <h2
+          id='experience-title'
+          class='relative font-semibold text-2xl sm:text-3xl lg:text-4xl'
+        >
+          {i18n.EXPERIENCE_TITLE}
+        </h2>
+      </div>
       <div class='flex flex-col gap-8'>
         {
           i18n.EXPERIENCE_ITEMS.filter(

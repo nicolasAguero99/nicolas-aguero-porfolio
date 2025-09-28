@@ -19,17 +19,22 @@ const i18n = getI18N(Astro.url.pathname);
       />
     </div>
     <div class='relative flex flex-col gap-6'>
-      <img
+      <!-- <img
         class='max-[350px]:hidden absolute -top-2 sm:-top-3 -left-5 w-[120px] sm:w-[140px] lg:w-[160px]'
         src='/illustrations/about-me-title.svg'
         alt='titulo'
-      />
-      <h2
-        id='about-me-title'
-        class='relative font-semibold text-2xl sm:text-3xl lg:text-4xl'
-      >
-        {i18n.ABOUT_ME_TITLE}
-      </h2>
+      /> -->
+      <div class='relative'>
+        <span class='absolute -top-3 font-semibold text-primary text-2xl sm:text-3xl lg:text-4xl blur-[2px] scale-110'>
+          {i18n.ABOUT_ME_TITLE}
+        </span>
+        <h2
+          id='about-me-title'
+          class='relative font-semibold text-2xl sm:text-3xl lg:text-4xl'
+          >
+          {i18n.ABOUT_ME_TITLE}
+        </h2>
+      </div>
       <p
         class='max-w-[480px] lg:max-w-[560px] max-[350px]:text-sm text-base sm:text-lg text-pretty after:max-[350px]:text-sm after:text-base after:sm:text-lg'
       >
@@ -91,6 +96,6 @@ const i18n = getI18N(Astro.url.pathname);
     }
 
     const ageSpan = document.getElementById("my-age");
-    if (ageSpan) ageSpan.textContent = age;
+    if (ageSpan) ageSpan.textContent = String(age);
   });
 </script>
